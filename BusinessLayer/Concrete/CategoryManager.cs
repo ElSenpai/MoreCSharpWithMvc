@@ -27,10 +27,11 @@ namespace BusinessLayer.Concrete
 
         public void add(Category category)
         {
-            if (CheackCategory(category))
-            {
-              _categoryDal.Add(category);
-            }
+            _categoryDal.Add(category);
+            //if (CheackCategory(category))
+            //{
+              
+            //}
             
         }
 

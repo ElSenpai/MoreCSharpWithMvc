@@ -20,6 +20,7 @@ namespace DataAccessLayer.Concrete.Repositories
         public void Add(T entity)
         {
             _object.Add(entity);
+            c.SaveChanges();
         }
 
         public void Delete(T entity)
