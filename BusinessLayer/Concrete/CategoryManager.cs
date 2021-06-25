@@ -29,15 +29,20 @@ namespace BusinessLayer.Concrete
         public void Add(Category category)
         {
            
-           
             
-               _categoryDal.Add(category);
-            
+               _categoryDal.Add(category);  
             
         }
 
-       
+        public Category GetById(int id)
+        {
+            return _categoryDal.Get(c=>c.CategoryId==id);
+        }
 
+        public void Delete(Category category)
+        {
+            _categoryDal.Delete(category);
+        }
     }
 
 }

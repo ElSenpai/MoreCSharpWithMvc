@@ -1,5 +1,8 @@
 ﻿using BusinessLayer.Concrete;
+using BusinessLayer.ValidationRules.FluentValidation;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +19,37 @@ namespace Mvc.Controllers
         {
             var list = cm.GetList();
             return View(list);
+        }
+        [HttpGet]
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddCategory(Category category)
+        {
+            CategoryValidator vali = new CategoryValidator();
+            ValidationResult results = vali.Validate(category);
+            if (results.IsValid)
+            {
+                cm.Add(category);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
+        public ActionResult DeleteCategory(int id)
+        {
+            var category = cm.GetById(id);
+            cm.Delete(category);
+
+            return View();
         }
     }
 }

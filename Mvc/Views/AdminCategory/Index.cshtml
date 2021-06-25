@@ -11,7 +11,7 @@
 
 <table class="table table-bordered" style="margin-top:20px">
     <tr>
-        <td>ID</td>
+        <td>#</td>
         <td>Kategori Adı</td>
         <td>Durum</td>
         <td>Sil</td>
@@ -25,11 +25,11 @@
     <td>@cate.CategoryId</td>
     <td>@cate.CategoryName</td>
     <td>@cate.Status</td>
-    <td><a href="#" class="btn btn-danger">Sil</a></td>
+    <td><a href="/AdminCategory/DeleteCategory/@cate.CategoryId" class="btn btn-danger">Sil</a></td>
     <td><a href="#" class="btn btn-warning">Güncelle</a></td>
     <td><a href="#" class="btn btn-primary">Başlıklar</a></td>
 </tr>
     }
 </table>
-<br />
-<a href="/Category/AddCategory" class="btn btn-primary">Yeni Kategori</a>
+
+<a href="/AdminCategory/AddCategory" class="btn btn-primary">Yeni Kategori</a>
