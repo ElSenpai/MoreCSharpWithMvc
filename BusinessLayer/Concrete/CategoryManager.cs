@@ -29,24 +29,14 @@ namespace BusinessLayer.Concrete
         public void Add(Category category)
         {
            
-            if (CheackCategory(category))
-            {
+           
+            
                _categoryDal.Add(category);
-            }
+            
             
         }
 
-        private bool CheackCategory(Category category)
-        {
-            if (category.CategoryName==""||category.CategoryName.Length<=3||category.Description==""||category.CategoryName.Length>= 51)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+       
 
     }
 
