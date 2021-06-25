@@ -49,7 +49,21 @@ namespace Mvc.Controllers
             var category = cm.GetById(id);
             cm.Delete(category);
 
-            return View();
+            return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult EditCategory(int id)
+        {
+            var value = cm.GetById(id);
+
+            return View(value);
+        }
+        [HttpPost]
+        public ActionResult EditCategory(Category category)
+        {
+            cm.Update(category);
+            return RedirectToAction("Index");
+        }
+
     }
 }

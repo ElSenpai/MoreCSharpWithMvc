@@ -19,6 +19,7 @@ namespace DataAccessLayer.Concrete.Repositories
         }
         public void Add(T entity)
         {
+           
             _object.Add(entity);
             c.SaveChanges();
         }
@@ -43,6 +44,7 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Update(T entity)
         {
+           
             c.SaveChanges();
         }
     }
