@@ -6,18 +6,11 @@ using System.Web.Mvc;
 
 namespace Mvc.Controllers
 {
-    public class StatisticsController : Controller
+    public class HeadingController : Controller
     {
-
-        // GET: Statistics
+        // GET: Heading
         public ActionResult Index()
         {
-            
-
-
-
-
-
             return View();
         }
     }
